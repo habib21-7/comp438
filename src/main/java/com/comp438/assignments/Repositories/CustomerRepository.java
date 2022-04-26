@@ -11,7 +11,10 @@ import java.util.List;
 public interface CustomerRepository extends CrudRepository<Customer,Long> {
 
     Customer findById(long id);
+    Customer findByEmail(String email);
 
     @Query(value = "SELECT c.* FROM customer as c", nativeQuery = true)
     List<Customer> findAllCustomers();
+
+
 }
