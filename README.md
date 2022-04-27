@@ -3,6 +3,8 @@
 
 * Database Design
 ![](desgins and results/ERD.png)
+  https://github.com/habib21-7/comp438/blob/main/desgins%20and%20results/ERD.png
+
 -database details is
   spring.datasource.url=jdbc:mysql://localhost:3306/comp438
   spring.datasource.username=root
@@ -19,7 +21,12 @@
 
 
 * APIs I tried
-* GET
+
+-GET
 ![](desgins and results/img.png)
-* POST
+https://github.com/habib21-7/comp438/blob/main/desgins%20and%20results/img.png
+ 
+
+-POST
 ![](desgins and results/img_1.png)
+https://github.com/habib21-7/comp438/blob/main/desgins%20and%20results/img_1.png
