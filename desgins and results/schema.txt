@@ -1,0 +1,59 @@
+drop database if exists comp438 ;
+create database comp438 ;
+use comp438;
+create table customer
+(
+    id      int auto_increment primary key,
+    name    varchar(64),
+    phone   varchar(64),
+    email   varchar(64),
+    address varchar(64)
+);
+
+create table supplier
+(
+    id      int auto_increment primary key,
+    name    varchar(64),
+    phone   varchar(64),
+    email   varchar(64),
+    address varchar(64)
+);
+
+create table product
+(
+    id          int auto_increment primary key,
+    name        varchar(64),
+    price       double,
+    quantity    int,
+    supplier_id int,
+    foreign key (supplier_id) REFERENCES supplier (id) ON DELETE CASCADE
+);
+
+create table orders
+(
+    id          int auto_increment primary key,
+    date        datetime,
+    amount      double,
+    description varchar(64)
+);
+create table category
+(
+    id   int auto_increment primary key,
+    name varchar(64)
+
+);
+create table product_category
+(
+    product_id int,
+    cat_id     int,
+    foreign key (product_id) REFERENCES product (id) on delete cascade,
+    foreign key (cat_id) REFERENCES category (id) on delete cascade
+)  ;
+
+create table ordersProducts
+(
+    product_id int,
+    order_id     int,
+    foreign key (product_id) REFERENCES product (id) on delete cascade,
+    foreign key (order_id) REFERENCES orders (id) on delete cascade
+) ;
